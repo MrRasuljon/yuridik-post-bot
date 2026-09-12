@@ -3,7 +3,7 @@
 import json
 import os
 
-ROOT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "state")
+ROOT = os.path.dirname(os.path.abspath(__file__))
 STATE = os.path.join(ROOT, "state.json")
 HISTORY = os.path.join(ROOT, "history.json")
 
@@ -24,7 +24,6 @@ def _read(path, default):
 
 
 def _write(path, data):
-    os.makedirs(ROOT, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
