@@ -1,0 +1,45 @@
+name: Tugmalarni tekshirish
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: yuridik-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Yangilanishlarni qayta ishlash
+        working-directory: bot
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          ADMIN_ID: ${{ secrets.ADMIN_ID }}
+        run: python poll.py
+
+      - name: Holatni saqlash
+        run: |
+          git config user.name  "yuridik-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state/
+          git diff --staged --quiet && echo "o'zgarish yo'q" && exit 0
+          git commit -m "state: poll $(date -u +%Y-%m-%dT%H:%M)"
+          for i in 1 2 3; do
+            git pull --rebase --autostash && git push && exit 0
+            sleep 5
+          done
+          exit 1
