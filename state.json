@@ -1,5 +1,12 @@
 {
-  "pending": null,
+  "pending": {
+    "rubric": "Tadbirkorlik va soliq",
+    "topic": "YaTT faoliyatini vaqtincha to'xtatish tartibi",
+    "post": "<b>🏢 YaTT faoliyatini to‘xtatmoqchimisiz? Buni to‘g‘ri bajaring!</b>\n\nKo‘p tadbirkorlar ishi yurishmay qolsa, faoliyatini shunchaki tashlab qo‘yadi. \"Ishlamayapman-ku, soliq chiqmaydi\" deb o‘ylash — jiddiy xato. Faoliyat rasman to‘xtatilmasa, ijtimoiy soliq va boshqa majburiy to‘lovlar hisoblanaveradi va katta qarz yig‘iladi.\n\n<b>Keraksiz qarzlardan qutulish uchun nima qilish kerak?</b>\n\n• <b>Onlayn ariza yuboring.</b> Soliq idorasiga borish shart emas. Soliq to‘lovchining shaxsiy kabineti (my.soliq.uz) orqali faoliyatni vaqtincha to‘xtatish haqida ariza bering.\n\n• <b>Muddatni aniq belgilang.</b> Arizada faoliyat qaysi sanadan va qancha muddatga to‘xtatilayotganini aniq ko‘rsating.\n\n• <b>Mavjud soliqlarni to‘lang.</b> Faoliyat to‘xtatilgan kunga qadar hisoblangan barcha soliq va to‘lovlarni to‘liq yopib qo‘ying.\n\n• <b>Terminal va cheklarni muzlating.</b> Agar hisobingizda onlayn-NKM yoki to‘lov terminali bo‘lsa, ularni ham vaqtincha faolsizlantiring.\n\n<i>Muhim eslatma:</i> Faoliyatni qayta tiklash ham juda oson — xuddi shu tizim orqali xabarnoma yuborib, o‘sha kunning o‘zidayoq qonuniy ishingizni davom ettirishingiz mumkin.",
+    "attempt": 1,
+    "created_at": "2026-09-12T17:00:44",
+    "admin_message_id": 6
+  },
   "last_update_id": 811926777,
   "rubric_index": 1,
   "awaiting_feedback": false
