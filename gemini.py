@@ -14,8 +14,10 @@ SCHEMA = {
     "properties": {
         "topic": {"type": "string"},
         "post": {"type": "string"},
+        "sarlavha": {"type": "string"},
+        "rasm_kerak": {"type": "boolean"},
     },
-    "required": ["topic", "post"],
+    "required": ["topic", "post", "sarlavha", "rasm_kerak"],
 }
 
 QOIDALAR = """Sen "⚖️ YURIDIK MASLAHAT 🇺🇿" Telegram kanali uchun post yozuvchi muharrirsan.
@@ -37,7 +39,20 @@ QAT'IY QOIDALAR:
 6. Faqat shu HTML teglar: <b>, <i>, <u>, <code>. Markdown (**, ##) ISHLATMA.
 7. Reklama, mubolag'a, "biz eng yaxshimiz" kabi gaplar yo'q.
 8. Oxiriga disclaimer yoki kanal linkini yozma — tizim o'zi qo'shadi.
-9. Post o'zi yakuniy holatda bo'lsin: "quyida", "keyingi postda" kabi gaplar yo'q."""
+9. Post o'zi yakuniy holatda bo'lsin: "quyida", "keyingi postda" kabi gaplar yo'q.
+
+RASM (kartochka) HAQIDA:
+10. "sarlavha" — kartochkaga yoziladigan qisqa sarlavha: 3-7 so'z, 55 belgidan oshmasin,
+    emojisiz, HTML tegsiz, nuqtasiz. Postning mohiyatini bir qarashda bildirsin.
+    Misol: "Sinov muddatida ish haqi to'lanadi" yoki "Shartnomasiz ishlash xavfi".
+11. "rasm_kerak" — postga kartochka qo'yish kerakmi:
+    true — mavzu keng auditoriyaga qiziq, e'tibor tortishi kerak, ogohlantirish yoki
+           muhim qoida haqida (odamlar ulashadigan post).
+    false — tor, texnik yoki quruq ma'lumot (hisobot muddati, hujjat raqami kabi),
+           yoki post uzun bo'lishi shart bo'lsa.
+    Har kuni true qilma — taxminan har 2-3 postdan bittasida true bo'lsin.
+12. MUHIM: agar "rasm_kerak" true bo'lsa, post uzunligi 800 belgidan OSHMASLIGI shart
+    (Telegram cheklovi). Sig'masa — rasm_kerak ni false qil."""
 
 
 def _extract(resp):
